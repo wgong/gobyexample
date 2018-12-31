@@ -44,7 +44,7 @@ those values.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/34PVHwO6Bn"><img title="Run code" src="play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/9kzBD8D51cU"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -98,8 +98,9 @@ concurrent receive.</p>
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>    <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;buffered&quot;</span>
-    <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;channel&quot;</span>
+            <div class="highlight"><pre>    <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;msg 1&quot;</span>
+    <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;msg 2&quot;</span>
+    <span class="c1">//messages &lt;- &quot;msg 3&quot;</span>
 </pre></div>
 
           </td>
@@ -114,6 +115,7 @@ concurrent receive.</p>
 	        
             <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">messages</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">messages</span><span class="p">)</span>
+    <span class="c1">//fmt.Println(&lt;-messages)</span>
 <span class="p">}</span>
 </pre></div>
 

@@ -18,10 +18,12 @@ func main() {
     // Because this channel is buffered, we can send these
     // values into the channel without a corresponding
     // concurrent receive.
-    messages <- "buffered"
-    messages <- "channel"
+    messages <- "msg 1"
+    messages <- "msg 2"
+    //messages <- "msg 3"
 
     // Later we can receive these two values as usual.
     fmt.Println(<-messages)
     fmt.Println(<-messages)
+    //fmt.Println(<-messages)
 }
