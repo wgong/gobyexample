@@ -54,6 +54,34 @@ func (t triangle) area() float64 {
 	return math.Sqrt(semi * (semi - t.a) * (semi - t.b) * (semi - t.c))
 }
 
+// http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go
+// behavior of abstract class
+type Animal interface {
+	Speak() string
+}
+
+// implemented by each object sharing the same behavior
+type Dog struct {
+}
+
+func (d Dog) Speak() string {
+	return "Woof!"
+}
+
+type Cat struct {
+}
+
+func (c Cat) Speak() string {
+	return "Meow!"
+}
+
+type JavaProgrammer struct {
+}
+
+func (j JavaProgrammer) Speak() string {
+	return "Design patterns!"
+}
+
 // If a variable has an interface type, then we can call
 // methods that are in the named interface. Here's a
 // generic `measure` function taking advantage of this
@@ -80,4 +108,11 @@ func main() {
 	// a triangle
 	t := triangle{a: 5, b: 12, c: 13}
 	measure(t)
+
+	// use Animal interface
+	animals := []Animal{Dog{}, Cat{}, JavaProgrammer{}}
+	for _, animal := range animals {
+		fmt.Printf("%T \t speaks %s\n", animal, animal.Speak())
+	}
+
 }
